@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.hermen.learnenglish.R
 
@@ -28,7 +29,7 @@ class CategoriasAdapter : RecyclerView.Adapter<CategoriasAdapter.ViewHolder> () 
 
     override fun onBindViewHolder(holder: CategoriasAdapter.ViewHolder, position: Int) {
         val item = listCategory.get(position)
-        holder.bind(item, context)
+        holder.bind(item, context, position)
     }
 
     override fun getItemCount(): Int {
@@ -38,8 +39,11 @@ class CategoriasAdapter : RecyclerView.Adapter<CategoriasAdapter.ViewHolder> () 
     class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
         val text = view.findViewById(R.id.textCategory) as TextView
 
-        fun  bind(category: String, context: Context) {
+        fun  bind(category: String, context: Context, position: Int) {
             text.text = category
+            text.setOnClickListener(View.OnClickListener {
+                Toast.makeText(context, ""+position, Toast.LENGTH_LONG).show()
+            })
         }
     }
 }
