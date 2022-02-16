@@ -6,6 +6,10 @@ class Test {
     var ran: Int = 0
     var iterator: Int = 0
 
+    constructor() {
+        initLista()
+    }
+
     fun initLista() {
         frasesParte1.add(0,  FrasesParte1("After you","Pase usted",0))
         frasesParte1.add(1,  FrasesParte1("Ages ago","Hace siglos",0))
@@ -19,20 +23,22 @@ class Test {
         frasesParte1.add(9,  FrasesParte1("By all means","Por supuesto que sí",0))
     }
 
-    fun  getFrasesParte1(): FrasesParte1? {
-        var frase = obtenerPalabra()
-        if(frase.isCorrect == 0) {
-            frase.isCorrect = 1
-            iterator = iterator + 1
-            frasesParte1.set(ran, frase)
-            return frase
-        } else {
-            return null
-        }
+    fun modificarList() {
+        frasesParte1.get(ran).isCorrect = 1
+        iterator = iterator + 1
     }
 
-    fun obtenerPalabra(): FrasesParte1 {
-        return frasesParte1.get(ran)
+    fun getIterador() : Int {
+        return iterator
+    }
+
+    fun obtenerPalabra(): FrasesParte1? {
+        getRandom()
+        var palabra: FrasesParte1 = frasesParte1.get(ran)
+        while(palabra.isCorrect != 1) {
+            return palabra
+        }
+        return null
     }
 
     fun getRandom() {

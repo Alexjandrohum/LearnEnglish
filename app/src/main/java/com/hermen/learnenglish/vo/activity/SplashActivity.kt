@@ -9,7 +9,7 @@ import com.hermen.learnenglish.R
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        SystemClock.sleep(4000);
+        SystemClock.sleep(2000);
         val intent = Intent(this, MainActivity::class.java);
         startActivity(intent)
     }
