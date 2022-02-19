@@ -10,6 +10,8 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2662297566731771" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_word.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/dialog_finish.xml" value="0.28125" />
+        <entry key="app/src/main/res/layout/fragment_dialog.xml" value="0.28125" />
         <entry key="app/src/main/res/layout/item_menu.xml" value="0.5344131469726563" />
       </map>
     </option>

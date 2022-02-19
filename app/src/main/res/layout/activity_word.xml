@@ -28,12 +28,12 @@
                 android:text="0"
                 android:gravity="right"
                 android:padding="10dp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/black"/>
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/lottieNumbers"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                app:lottie_rawRes="@raw/focus"
+                app:lottie_rawRes="@raw/brain_pregunta"
                 android:layout_gravity="center"
                 app:lottie_loop="true"
                 app:lottie_autoPlay="true"
@@ -59,7 +59,11 @@
                     android:id="@+id/tv_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    />
+                    android:focusable="true"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:minLines="1"
+                    android:singleLine="true" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -68,21 +72,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"/>
-
-            <Button
-                android:id="@+id/bt_comprobar"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Comprobar"
-                android:layout_gravity="center"
-                style="?attr/materialButtonOutlinedStyle"
-                android:layout_marginTop="10dp"
-                android:onClick="comprobarPalabra"
-                />
-
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+                <Button
+                    android:id="@+id/bt_comprobar"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:onClick="comprobarPalabra"
+                    android:singleLine="true"
+                    android:text="Comprobar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+                <ImageView
+                    android:id="@+id/imEye"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/eye"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

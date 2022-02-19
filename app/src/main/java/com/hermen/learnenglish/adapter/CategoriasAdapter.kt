@@ -41,13 +41,13 @@ class CategoriasAdapter : RecyclerView.Adapter<CategoriasAdapter.ViewHolder> () 
 
     class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
         val text = view.findViewById(R.id.textCategory) as TextView
-        val lottie = view.findViewById(R.id.lottieNumbers) as LottieAnimationView
+        val lottie = view.findViewById(R.id.lottieItems) as LottieAnimationView
 
         fun  bind(category: String, context: Context, position: Int) {
             text.text = category
             when(position) {
                 0 -> lottie.setAnimation(R.raw.focus)
-                1 -> lottie.setAnimation(R.raw.focus)
+                1 -> lottie.setAnimation(R.raw.brain_pregunta)
                 2 -> lottie.setAnimation(R.raw.brain_circulo)
                 3 -> lottie.setAnimation(R.raw.brain_colores)
                 4 -> lottie.setAnimation(R.raw.brain_compu)
@@ -58,11 +58,46 @@ class CategoriasAdapter : RecyclerView.Adapter<CategoriasAdapter.ViewHolder> () 
                 9 -> lottie.setAnimation(R.raw.focus)
                 10 -> lottie.setAnimation(R.raw.brain_compu)
             }
+            lottie.setOnClickListener(View.OnClickListener {
+                val intent = Intent(context, WordActivity::class.java)
+                when(position+1) {
+                    1 -> intent.putExtra("frases", 1)
+                    2 -> intent.putExtra("frases", 2)
+                    3 -> intent.putExtra("frases", 3)
+                    4 -> intent.putExtra("frases", 4)
+                    5 -> intent.putExtra("frases", 5)
+                    6 -> intent.putExtra("frases", 6)
+                    7 -> intent.putExtra("frases", 7)
+                    8 -> intent.putExtra("frases", 8)
+                    9 -> intent.putExtra("frases", 9)
+                    10 -> intent.putExtra("frases", 10)
+                }
+                if (position+1 <8) {
+                    context.startActivity(intent)
+                } else {
+                    Toast.makeText(context, "Próximamente...", Toast.LENGTH_SHORT).show()
+                }
+            })
 
             text.setOnClickListener(View.OnClickListener {
-                Toast.makeText(context, ""+position, Toast.LENGTH_LONG).show()
                 val intent = Intent(context, WordActivity::class.java)
-                context.startActivity(intent)
+                when(position+1) {
+                    1 -> intent.putExtra("frases", 1)
+                    2 -> intent.putExtra("frases", 2)
+                    3 -> intent.putExtra("frases", 3)
+                    4 -> intent.putExtra("frases", 4)
+                    5 -> intent.putExtra("frases", 5)
+                    6 -> intent.putExtra("frases", 6)
+                    7 -> intent.putExtra("frases", 7)
+                    8 -> intent.putExtra("frases", 8)
+                    9 -> intent.putExtra("frases", 9)
+                    10 -> intent.putExtra("frases", 10)
+                }
+                if (position+1 <8) {
+                    context.startActivity(intent)
+                } else {
+                    Toast.makeText(context, "Próximamente...", Toast.LENGTH_SHORT).show()
+                }
             })
         }
     }

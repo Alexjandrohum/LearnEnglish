@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dialog_finish"
+    android:padding="10dp">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_congratulations"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:lottie_rawRes="@raw/congratulations"
+        android:layout_gravity="center"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/idFelicidades"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¡Felicidades!"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lottie_congratulations"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/txComp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Has concluido la prueba con éxito"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idFelicidades"
+        android:textSize="15sp"/>
+
+    <Button
+        android:id="@+id/bt_comprobar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Finalizar"
+        android:layout_gravity="center"
+        style="?attr/borderlessButtonStyle"
+        android:layout_marginTop="30dp"
+        android:onClick="finalizarPrueba"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txComp"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

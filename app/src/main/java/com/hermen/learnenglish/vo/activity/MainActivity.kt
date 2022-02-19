@@ -3,9 +3,7 @@ package com.hermen.learnenglish.vo.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.airbnb.lottie.LottieAnimationView
 import com.hermen.learnenglish.R
 import com.hermen.learnenglish.adapter.CategoriasAdapter
 
@@ -20,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         var listCategory : MutableList<String> = ArrayList()
         for (i in 0..10) {
-            listCategory.add(i, "Category "+i)
+            listCategory.add(i, "Frases parte "+(i+1))
         }
 
         mReciclerView = findViewById(R.id.rvCategory) as RecyclerView
